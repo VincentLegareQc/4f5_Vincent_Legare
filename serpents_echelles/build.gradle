@@ -1,0 +1,11 @@
+plugins {
+	id 'local-4f5-plugin'
+}
+
+
+task historique_parties (type:JavaExec) {
+	dependsOn 'classes'
+	main = 'serpents_echelles.pages.historique_parties.PageHistoriqueParties'
+	classpath = sourceSets.main.runtimeClasspath
+	jvmArgs('-Dfile.encoding=UTF-8', '-Duser.language=fr')
+}
