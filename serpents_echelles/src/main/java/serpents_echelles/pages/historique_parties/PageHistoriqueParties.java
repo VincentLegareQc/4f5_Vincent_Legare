@@ -2,11 +2,23 @@ package serpents_echelles.pages.historique_parties;
 
 import java.util.Random;
 import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import ntro.debogage.DoitEtre;
 import ntro.debogage.J;
+import ntro.javafx.ChargeurDeVue;
 import ntro.javafx.Initialisateur;
+import ntro.mvc.controleurs.FabriqueControleur;
 import ntro.mvc.modeles.EntrepotDeModeles;
 import ntro.systeme.Systeme;
+import serpents_echelles.pages.historique_parties.afficheurs.AfficheurHistorique;
+import serpents_echelles.pages.historique_parties.controleurs.ControleurHistorique;
+import serpents_echelles.pages.historique_parties.vues.VueHistorique;
+
+
+import static serpents_echelles.pages.historique_parties.Constantes.*;
 
 public class PageHistoriqueParties extends Application{
 	private String[] modelJson = {"test01","test02","test03"};
@@ -29,7 +41,36 @@ public class PageHistoriqueParties extends Application{
 	public void start(Stage fenetrePrincipale) throws Exception {
 		J.appel(this);
 		
-		String idModeleTest = modelJson[alea.nextInt(modelJson.length)];
+		// Interface
+		
+		ChargeurDeVue<VueHistorique> chargeur;
+		chargeur = new ChargeurDeVue<VueHistorique>(CHEMIN_HISTORIQUE_FXML);
+		
+		VueHistorique vue = chargeur.getVue();
+		
+		String idModeleTest = IDS_MODELES_TESTS[alea.nextInt(IDS_MODELES_TESTS.length)];
+		Historique historique = EntrepotDeModeles.obtenirModele(Historique.class, idModeleTest);
+		
+		AfficheurHistorique afficheurHistorique = new AfficheurHistorique();
+		
+		DoitEtre.nonNul(vue);
+		
+		FabriqueControleur.creerControleur(ControleurHistorique.class, historique, vue, afficheurHistorique);
+
+		Scene scene = chargeur.nouvelleScene(LARGEUR_PIXELS, HAUTEUR_PIXELS);
+		
+		fenetrePrincipale.setScene(scene);
+		
+		fenetrePrincipale.setMinWidth(LARGEUR_PIXELS);
+		fenetrePrincipale.setMinHeight(HAUTEUR_PIXELS);
+		
+		capterEvenementFermeture(fenetrePrincipale);
+
+		fenetrePrincipale.show();
+		
+		// Console
+		
+		/*String idModeleTest = modelJson[alea.nextInt(modelJson.length)];
 		Historique historique = EntrepotDeModeles.obtenirModele(Historique.class, idModeleTest);
 		
 		System.out.println("Nom du test JSon: " + idModeleTest);
@@ -48,6 +89,19 @@ public class PageHistoriqueParties extends Application{
 			J.valeurs(historique.getpartieArchive().get(i).getDureePartie());
 		}
 
-		Systeme.quitter();
+		Systeme.quitter();*/
+	}
+	
+	private void capterEvenementFermeture(Stage fenetrePrincipale) {
+		J.appel(this);
+
+		fenetrePrincipale.setOnCloseRequest(new EventHandler<WindowEvent>() {
+			@Override
+			public void handle(WindowEvent event) {
+				J.appel(this);
+
+				Systeme.quitter();
+			}
+		});
 	}
 }
