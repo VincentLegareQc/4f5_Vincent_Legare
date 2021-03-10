@@ -33,6 +33,7 @@ public class PageHistoriqueParties extends Application{
 		Historique historique = EntrepotDeModeles.obtenirModele(Historique.class, idModeleTest);
 		
 		System.out.println("Nom du test JSon: " + idModeleTest);
+		System.out.print("Nombre de parties : ");
 		J.valeurs(historique.getnbPartieArchive());
 		for (int i = 0; i < historique.getpartieArchive().size(); i++) {
 			System.out.print("ID du joueur : ");
