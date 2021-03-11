@@ -21,7 +21,6 @@ import serpents_echelles.pages.historique_parties.vues.VueHistorique;
 import static serpents_echelles.pages.historique_parties.Constantes.*;
 
 public class PageHistoriqueParties extends Application{
-	private String[] modelJson = {"test01","test02","test03"};
 
 	static {
 
@@ -70,9 +69,6 @@ public class PageHistoriqueParties extends Application{
 		
 		// Console
 		
-		/*String idModeleTest = modelJson[alea.nextInt(modelJson.length)];
-		Historique historique = EntrepotDeModeles.obtenirModele(Historique.class, idModeleTest);
-		
 		System.out.println("Nom du test JSon: " + idModeleTest);
 		System.out.print("Nombre de parties : ");
 		J.valeurs(historique.getnbPartieArchive());
@@ -88,8 +84,6 @@ public class PageHistoriqueParties extends Application{
 			System.out.print("Durée de la partie : ");
 			J.valeurs(historique.getpartieArchive().get(i).getDureePartie());
 		}
-
-		Systeme.quitter();*/
 	}
 	
 	private void capterEvenementFermeture(Stage fenetrePrincipale) {

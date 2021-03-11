@@ -29,6 +29,48 @@
 			"couleur": "JAUNE",
 			"dureePartie": 57,
 			"nbCoups": 92
+		},
+		{
+			"id": 2,
+			"nomGagnant": "andy",
+			"couleur": "ROUGE",
+			"dureePartie": 75,
+			"nbCoups": 124
+		},
+		{
+			"id": 3,
+			"nomGagnant": "vincent",
+			"couleur": "JAUNE",
+			"dureePartie": 57,
+			"nbCoups": 92
+		},
+		{
+			"id": 2,
+			"nomGagnant": "andy",
+			"couleur": "ROUGE",
+			"dureePartie": 75,
+			"nbCoups": 124
+		},
+		{
+			"id": 3,
+			"nomGagnant": "vincent",
+			"couleur": "JAUNE",
+			"dureePartie": 57,
+			"nbCoups": 92
+		},
+		{
+			"id": 2,
+			"nomGagnant": "andy",
+			"couleur": "ROUGE",
+			"dureePartie": 75,
+			"nbCoups": 124
+		},
+		{
+			"id": 3,
+			"nomGagnant": "vincent",
+			"couleur": "JAUNE",
+			"dureePartie": 57,
+			"nbCoups": 92
 		}
 	]
 }

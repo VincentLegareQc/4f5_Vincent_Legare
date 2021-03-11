@@ -8,12 +8,24 @@ import serpents_echelles.pages.historique_parties.vues.VueHistorique;
 public class AfficheurHistorique extends Afficheur<HistoriqueLectureSeule, VueHistorique>{
 
 	@Override
-	public void initialiserAffichage(HistoriqueLectureSeule arg0, VueHistorique arg1) {
+	public void initialiserAffichage(HistoriqueLectureSeule modeleLectureSeule, VueHistorique vue) {
 		J.appel(this);
 	}
 
 	@Override
-	public void rafraichirAffichage(HistoriqueLectureSeule arg0, VueHistorique arg1) {
+	public void rafraichirAffichage(HistoriqueLectureSeule modeleLectureSeule, VueHistorique vue) {
 		J.appel(this);
+		
+		for (int i = 0; i < modeleLectureSeule.getpartieArchive().size(); i++) {
+			vue.creerLigne(modeleLectureSeule.getpartieArchive().get(i).getCouleur(), 
+					modeleLectureSeule.getpartieArchive().get(i).getNomGagnant(), 
+					modeleLectureSeule.getpartieArchive().get(i).getDureePartie(),
+					modeleLectureSeule.getpartieArchive().get(i).getNbCoups());
+		}
+		
+		/*vue.creerLigne(modeleLectureSeule.getpartieArchive().get(0).getCouleur(), 
+				modeleLectureSeule.getpartieArchive().get(0).getNomGagnant(), 
+				modeleLectureSeule.getpartieArchive().get(0).getDureePartie(),
+				modeleLectureSeule.getpartieArchive().get(0).getNbCoups());*/
 	}
 }
