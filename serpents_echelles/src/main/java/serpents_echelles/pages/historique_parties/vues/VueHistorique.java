@@ -123,8 +123,5 @@ public class VueHistorique implements Vue, Initializable{
 		
 		anchorPane.getChildren().addAll(circle, nom, duree, nbCoups);
 		VBoxHistorique.getChildren().add(anchorPane);
-		
-
-
 	}
 }

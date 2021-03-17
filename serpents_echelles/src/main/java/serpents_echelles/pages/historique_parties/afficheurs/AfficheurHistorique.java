@@ -22,10 +22,5 @@ public class AfficheurHistorique extends Afficheur<HistoriqueLectureSeule, VueHi
 					modeleLectureSeule.getpartieArchive().get(i).getDureePartie(),
 					modeleLectureSeule.getpartieArchive().get(i).getNbCoups());
 		}
-		
-		/*vue.creerLigne(modeleLectureSeule.getpartieArchive().get(0).getCouleur(), 
-				modeleLectureSeule.getpartieArchive().get(0).getNomGagnant(), 
-				modeleLectureSeule.getpartieArchive().get(0).getDureePartie(),
-				modeleLectureSeule.getpartieArchive().get(0).getNbCoups());*/
 	}
 }
