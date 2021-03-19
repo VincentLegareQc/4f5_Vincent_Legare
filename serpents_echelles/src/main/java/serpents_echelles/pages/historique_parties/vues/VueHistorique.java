@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import enumerations.CouleurPartie;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -16,11 +18,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import ntro.commandes.FabriqueCommande;
 import ntro.debogage.DoitEtre;
 import ntro.debogage.J;
 import ntro.mvc.Vue;
+import serpents_echelles.commandes.fermer_historique.FermerHistorique;
+import serpents_echelles.commandes.fermer_historique.FermerHistoriquePourEnvoi;
 
 public class VueHistorique implements Vue, Initializable{
+	
+	private FermerHistoriquePourEnvoi fermerHistorique;
 	
 	@FXML
 	private ScrollPane ScrollPaneHistorique;
@@ -29,7 +36,7 @@ public class VueHistorique implements Vue, Initializable{
 	private VBox VBoxHistorique;
 	
 	@FXML
-	private Button btnQuitter, btnRetour;
+	private Button btnFermer;
 	
 	@FXML
 	private Text titreHistorique;
@@ -43,8 +50,7 @@ public class VueHistorique implements Vue, Initializable{
 		
 		DoitEtre.nonNul(ScrollPaneHistorique);
 		DoitEtre.nonNul(VBoxHistorique);
-		DoitEtre.nonNul(btnQuitter);
-		DoitEtre.nonNul(btnRetour);
+		DoitEtre.nonNul(btnFermer);
 		DoitEtre.nonNul(titreHistorique);
 		DoitEtre.nonNul(backgroundSquare);
 	}
@@ -52,13 +58,23 @@ public class VueHistorique implements Vue, Initializable{
 	@Override
 	public void installerCapteursEvenementsUsager() {
 		J.appel(this);
-		// TODO Auto-generated method stub
+		
+		btnFermer.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				J.appel(this);
+
+				fermerHistorique.envoyerCommande();
+			}
+		});
+
 	}
 
 	@Override
 	public void obtenirCommandesPourEnvoi() {
 		J.appel(this);
-		// TODO Auto-generated method stub
+
+		fermerHistorique = FabriqueCommande.obtenirCommandePourEnvoi(FermerHistorique.class);
 	}
 
 	@Override

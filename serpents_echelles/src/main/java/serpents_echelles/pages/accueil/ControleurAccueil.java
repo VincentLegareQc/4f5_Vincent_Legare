@@ -9,10 +9,13 @@ import ntro.mvc.controleurs.ControleurVue;
 import ntro.mvc.controleurs.FabriqueControleur;
 import ntro.mvc.controleurs.RecepteurCommandeMVC;
 import ntro.mvc.modeles.EntrepotDeModeles;
+import ntro.systeme.Systeme;
 import serpents_echelles.commandes.fermer_historique.FermerHistorique;
 import serpents_echelles.commandes.fermer_historique.FermerHistoriqueRecue;
 import serpents_echelles.commandes.ouvrir_historique.OuvrirHistorique;
 import serpents_echelles.commandes.ouvrir_historique.OuvrirHistoriqueRecue;
+import serpents_echelles.commandes.quitter.Quitter;
+import serpents_echelles.commandes.quitter.QuitterRecue;
 import serpents_echelles.pages.historique_parties.Historique;
 import serpents_echelles.pages.historique_parties.afficheurs.AfficheurHistorique;
 import serpents_echelles.pages.historique_parties.controleurs.ControleurHistorique;
@@ -61,6 +64,15 @@ public class ControleurAccueil extends ControleurVue<VueAccueil>{
 				fermerHistorique();
 			}
 		});
+		
+		installerRecepteurCommande(Quitter.class, new RecepteurCommandeMVC<QuitterRecue>() {
+			@Override
+			public void executerCommandeMVC(QuitterRecue commande) {
+				J.appel(this);
+
+				quitter();
+			}
+		});
 	}
 	
 	@Override
@@ -87,6 +99,12 @@ public class ControleurAccueil extends ControleurVue<VueAccueil>{
 		if(dialogueHistorique != null) {
 			dialogueHistorique.close();
 		}
+	}
+	
+	private void quitter() {
+		J.appel(this);
+
+		Systeme.quitter();
 	}
 	
 	private void instancierControleurHistorique() throws IOException {
