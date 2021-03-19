@@ -10,32 +10,32 @@
 <?import javafx.scene.text.Text?>
 
 <VBox xmlns:fx="http://javafx.com/fxml" alignment="center"
-    fx:controller="serpents_echelles.pages.historique_parties.vues.VueAccueil">
+    fx:controller="serpents_echelles.pages.accueil.VueAccueil">
    <children>
-      <Pane prefHeight="417.0" prefWidth="600.0">
+      <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#268a44" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-            <ImageView id="imgSerpent" fitHeight="265.0" fitWidth="201.0" layoutX="200.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgSerpent" fitHeight="265.0" fitWidth="201.0" layoutX="200.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@serpent.png" />
                </image>
             </ImageView>
-            <Button id="btnJouer" layoutX="73.0" layoutY="104.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="455.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 50; -fx-border-width: 3;" text="Jouer" textFill="WHITE">
+            <Button fx:id="btnJouer" layoutX="73.0" layoutY="104.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="455.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 50; -fx-border-width: 3;" text="Jouer" textFill="WHITE">
                <font>
                   <Font name="Arial" size="36.0" />
                </font>
             </Button>
-            <Text id="txtTitre" fill="#1b3497" layoutX="62.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Serpents et échelles">
+            <Text fx:id="txtTitre" fill="#1b3497" layoutX="62.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Serpents et échelles">
                <font>
                   <Font name="Ravie" size="36.0" />
                </font>
             </Text>
-            <Button id="btnHistorique" layoutX="80.0" layoutY="200.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="455.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 50; -fx-border-width: 3;" text="Historique des parties" textFill="WHITE">
+            <Button fx:id="btnHistorique" layoutX="80.0" layoutY="189.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="455.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 50; -fx-border-width: 3;" text="Historique des parties" textFill="WHITE">
                <font>
                   <Font name="Arial" size="36.0" />
                </font>
             </Button>
-            <Button id="btnQuitter" layoutX="80.0" layoutY="295.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="455.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 50; -fx-border-width: 3;" text="Quitter" textFill="WHITE">
+            <Button fx:id="btnQuitter" layoutX="80.0" layoutY="273.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="455.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 50; -fx-border-width: 3;" text="Quitter" textFill="WHITE">
                <font>
                   <Font name="Arial" size="36.0" />
                </font>
