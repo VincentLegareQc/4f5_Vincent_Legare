@@ -8,4 +8,7 @@ public class Constantes {
 	
 	public static final int LARGEUR_PIXELS = 600;
 	public static final int HAUTEUR_PIXELS= 400;
+	
+	public static final int PORT = 8765;
+	public static final String ADRESSE_SERVEUR = String.format("ws://localhost:%s", PORT);
 }

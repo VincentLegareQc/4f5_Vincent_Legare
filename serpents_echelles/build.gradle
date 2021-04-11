@@ -9,3 +9,25 @@ task historique_parties (type:JavaExec) {
 	classpath = sourceSets.main.runtimeClasspath
 	jvmArgs('-Dfile.encoding=UTF-8', '-Duser.language=fr')
 }
+
+task serpentServeur (type:JavaExec) {
+   dependsOn 'classes'
+   main = 'serpents_echelles.serveur.MonServeur'
+   classpath = sourceSets.main.runtimeClasspath
+   standardInput = System.in
+   jvmArgs('-Dfile.encoding=UTF-8', '-Duser.language=fr')
+}
+ 
+task serpentAccueil (type:JavaExec) {
+      dependsOn 'classes'
+      main = 'serpents_echelles.pages.client.MonClient'
+      classpath = sourceSets.main.runtimeClasspath
+      jvmArgs('-Dfile.encoding=UTF-8', '-Duser.language=fr')
+}
+
+task serpentHistorique (type:JavaExec) {
+      dependsOn 'classes'
+      main = 'serpents_echelles.pages.historique_parties.PageHistoriqueParties'
+      classpath = sourceSets.main.runtimeClasspath
+      jvmArgs('-Dfile.encoding=UTF-8', '-Duser.language=fr')
+}
