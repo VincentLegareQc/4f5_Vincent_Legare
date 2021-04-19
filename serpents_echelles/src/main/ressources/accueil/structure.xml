@@ -17,7 +17,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#268a44" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
             <ImageView fx:id="imgSerpent" fitHeight="265.0" fitWidth="201.0" layoutX="200.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@serpent.png" />
+                  <Image url="/accueil/serpent.png" />
                </image>
             </ImageView>
             <Button fx:id="btnJouer" layoutX="73.0" layoutY="104.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="455.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 50; -fx-border-width: 3;" text="Jouer" textFill="WHITE">

@@ -48,7 +48,7 @@ public class PageHistoriqueParties extends Application{
 		
 		// Interface
 		ChargeurDeVue<VueHistorique> chargeur;
-		chargeur = new ChargeurDeVue<VueHistorique>(CHEMIN_HISTORIQUE_FXML);
+		chargeur = new ChargeurDeVue<VueHistorique>(CHEMIN_HISTORIQUE_FXML, CHEMIN_CSS, CHEMIN_CHAINES);
 		
 		VueHistorique vue = chargeur.getVue();
 		

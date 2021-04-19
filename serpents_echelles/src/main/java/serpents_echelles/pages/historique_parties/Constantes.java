@@ -11,4 +11,8 @@ public class Constantes {
 	
 	public static final int PORT = 8765;
 	public static final String ADRESSE_SERVEUR = String.format("ws://localhost:%s", PORT);
+	
+	
+	public static final String CHEMIN_CHAINES = "traductions/chaines";
+	public static final String CHEMIN_CSS = "/historique/style.css";
 }

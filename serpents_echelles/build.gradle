@@ -25,9 +25,16 @@ task serpentAccueil (type:JavaExec) {
       jvmArgs('-Dfile.encoding=UTF-8', '-Duser.language=fr')
 }
 
-task serpentHistorique (type:JavaExec) {
+task serpentHistoriqueFR (type:JavaExec) {
       dependsOn 'classes'
       main = 'serpents_echelles.pages.historique_parties.PageHistoriqueParties'
       classpath = sourceSets.main.runtimeClasspath
       jvmArgs('-Dfile.encoding=UTF-8', '-Duser.language=fr')
+}
+
+task serpentHistoriqueEN (type:JavaExec) {
+      dependsOn 'classes'
+      main = 'serpents_echelles.pages.historique_parties.PageHistoriqueParties'
+      classpath = sourceSets.main.runtimeClasspath
+      jvmArgs('-Dfile.encoding=UTF-8', '-Duser.language=en')
 }

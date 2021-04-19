@@ -43,10 +43,14 @@ public class VueHistorique implements Vue, Initializable{
 	
 	@FXML
 	private Rectangle backgroundSquare;
+	
+	private ResourceBundle resources;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		J.appel(this);
+		
+		this.resources = resources;
 		
 		DoitEtre.nonNul(ScrollPaneHistorique);
 		DoitEtre.nonNul(VBoxHistorique);
@@ -96,9 +100,9 @@ public class VueHistorique implements Vue, Initializable{
 		Text duree = new Text();
 		Text nbCoups = new Text();
 		
-		nom.setText("Nom : " + nom1);
-		duree.setText("Durée de la partie : " + String.valueOf(dureePartie));
-		nbCoups.setText("Nombre de coups : " + String.valueOf(nbCoups1));
+		nom.setText(this.resources.getString("Nom") + nom1);
+		duree.setText(this.resources.getString("Duree_de_la_partie") + String.valueOf(dureePartie));
+		nbCoups.setText(this.resources.getString("Nombre_de_coups") + String.valueOf(nbCoups1));
 		
 		ligne.setSpacing(30);
 		ligne.setPadding(new Insets(20, 20, 20, 20));
