@@ -44,6 +44,9 @@ public class VueHistorique implements Vue, Initializable{
 	@FXML
 	private Rectangle backgroundSquare;
 	
+	@FXML
+	private VBox VBoxPrincipal;
+	
 	private ResourceBundle resources;
 
 	@Override
@@ -54,9 +57,9 @@ public class VueHistorique implements Vue, Initializable{
 		
 		DoitEtre.nonNul(ScrollPaneHistorique);
 		DoitEtre.nonNul(VBoxHistorique);
+		DoitEtre.nonNul(VBoxPrincipal);
 		DoitEtre.nonNul(btnFermer);
 		DoitEtre.nonNul(titreHistorique);
-		DoitEtre.nonNul(backgroundSquare);
 	}
 
 	@Override
@@ -84,11 +87,20 @@ public class VueHistorique implements Vue, Initializable{
 	@Override
 	public void verifierCommandesPossibles() {
 		J.appel(this);
-		// TODO Auto-generated method stub
+	}
+	
+	public void changeColor(){
+		btnFermer.setStyle("-fx-background-color:BLUE;");
+	}
+	
+	public void backColor() {
+		btnFermer.setStyle("-fx-background-color:#000000FF;");
 	}
 	
 	public void creerLigne(CouleurPartie couleur1, String nom1, int dureePartie, int nbCoups1) {
 		J.appel(this);
+		
+		VBoxPrincipal.setStyle("-fx-background-color:#268a44;");
 		
 		HBox ligne = new HBox();
 		AnchorPane anchorPane = new AnchorPane();

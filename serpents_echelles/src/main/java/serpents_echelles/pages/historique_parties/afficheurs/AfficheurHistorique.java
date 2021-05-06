@@ -3,6 +3,8 @@ package serpents_echelles.pages.historique_parties.afficheurs;
 import ntro.debogage.J;
 import ntro.mvc.Afficheur;
 import serpents_echelles.pages.historique_parties.HistoriqueLectureSeule;
+import serpents_echelles.pages.historique_parties.PageHistoriqueParties;
+import serpents_echelles.pages.historique_parties.PageHistoriquePartiesLectureSeule;
 import serpents_echelles.pages.historique_parties.vues.VueHistorique;
 
 public class AfficheurHistorique extends Afficheur<HistoriqueLectureSeule, VueHistorique>{
