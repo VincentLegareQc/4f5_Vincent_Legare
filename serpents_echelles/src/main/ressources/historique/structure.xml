@@ -22,11 +22,15 @@
             </Text>
          </children>
       </HBox>
-      <ScrollPane fx:id="ScrollPaneHistorique" VBox.vgrow="NEVER">
-         <content>
-            <VBox fx:id="VBoxHistorique" prefHeight="211.0" />
-         </content>
-      </ScrollPane>
+      <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ScrollPane fx:id="ScrollPaneHistorique" prefHeight="156.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
+               <content>
+                  <VBox fx:id="VBoxHistorique" prefHeight="211.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
       <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS" />
       <Button fx:id="btnFermer" alignment="CENTER" mnemonicParsing="false" onMouseEntered="#changeColor" onMouseExited="#backColor" style="-fx-background-color: black;" text="Fermer" textFill="WHITE" VBox.vgrow="ALWAYS">
          <font>
